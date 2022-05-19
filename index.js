@@ -11,7 +11,7 @@ app.get('/', (req, res, next) => {
     [
       {
         id: 1,
-        tarefa: "Fazer compras para o dog",
+        tarefa: "Fazer compras para o dods",
         data: "21/09/2002",
         status: "pronto"
       },
