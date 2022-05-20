@@ -1,34 +1,27 @@
-const {supabase} = require('./superbase');
-
+const connection = require('./connection');
 
 const listAllTask = async () => {
-  const { data, error } = await supabase
-  .from('tarefas')
-  .select()
-    return data;
+    const [results] = await connection
+    .execute(`SELECT * FROM TodoList.tarefas;`);
+    return results;
 };
 
 const createNewTask = async (tarefa, data, status) => {
-  await supabase
-  .from('tarefas')
-  .insert([
-    { tarefa: tarefa, data: data, status: status },
-  ])
+  await connection
+.execute(`INSERT INTO TodoList.tarefas (tarefa, data, status) 
+VALUES(?, ?, ?);`, [tarefa, data, status]);
 };
 
 
 const updatedTask = async (tarefa, status, id) => {
-  await supabase
-  .from('tarefas')
-  .update({ tarefa, status })
-  .match({ id })
+  await connection
+.execute(`UPDATE TodoList.tarefas SET tarefa = ?, 
+status = ? WHERE id = ?;`, [tarefa, status, id]);
 };
 
 const excludedTask = async (id) => {
-  await supabase
-  .from('tarefas')
-  .delete()
-  .match({ id: id })
+  await connection
+.execute('DELETE FROM TodoList.tarefas WHERE id = ?;', [id]);
 };
 
 module.exports = {
