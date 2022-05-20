@@ -1,7 +1,7 @@
 ## Projeto Back-end Ebytr
 
  
-<h3 align='center'> 😀 Nada é errado se te faz feliz. </h3>
+<h3 align='center'> 😀 Nada é tão grande quanto nosso sonhos. </h3>
 
 ## 📄 Contexto
 
