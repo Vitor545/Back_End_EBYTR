@@ -34,7 +34,7 @@ const updateTask = async (req, res, next) => {
 const deleteTask = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await services.excludeTask(id);
+    await services.deleteTasks(id);
     return res.status(204).end();
   } catch (e) {
     next(e);
