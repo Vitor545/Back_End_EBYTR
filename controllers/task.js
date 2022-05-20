@@ -13,7 +13,7 @@ const getTask = async (_req, res, next) => {
 const createTask = async (req, res, next) => {
   try {
     const {tarefa, data, status} = req.body;
-    await services.createTasks(tarefa, data, status, res);
+    await services.createTasks(tarefa, data, status);
     return res.status(201).send({ message: 'created' });
   } catch (e) {
     next(e);
@@ -24,7 +24,7 @@ const updateTask = async (req, res, next) => {
   try {
     const {tarefa, status} = req.body;
     const { id } = req.params;
-    await services.taskUpdate(tarefa, status, id, res);
+    await services.taskUpdate(tarefa, status, id);
     return res.status(200).send({ message: 'updated' });
   } catch (e) {
     next(e);
