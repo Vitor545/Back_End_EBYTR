@@ -9,7 +9,7 @@
 
 <br />
 
-<img width=100% src="ezgif.com-gif-maker.gif"></img>
+<img width=100% src="Back.png"></img>
 
 <br/>
 
